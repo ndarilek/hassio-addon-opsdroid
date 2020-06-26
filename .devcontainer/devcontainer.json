@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/vscode-remote/devcontainer.json 
 // TODO: When https://github.com/microsoft/vscode-remote-release/issues/2129 is fixed, move to ${localWorkspaceFolderBasename}\
 {
-	"name": "Home Assistant Add-On",
+	"name": "opsdroid Add-On",
 	"context": "..",
 	"dockerFile": "Dockerfile",
 	"appPort": 8123,
@@ -10,16 +10,19 @@
 		"GIT_EDITOR=code --wait",
 		"--privileged"
 	],
-	"settings": { 
+	"settings": {
 		"terminal.integrated.shell.linux": "/bin/bash"
 	},
-	"workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/test_hassio/addons/local/myaddon,type=bind,consistency=delegated",
-	"workspaceFolder": "/workspaces/test_hassio/addons/local/myaddon",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/test_hassio/addons/local/addon,type=bind,consistency=delegated",
+	"workspaceFolder": "/workspaces/test_hassio/addons/local/addon",
 	"mounts": [
 		// Cache docker images between devcontainer rebuilds (and share between devcontainers)
 		"source=vsc-hassio-docker,target=/var/lib/docker,type=volume"
+	],
+	"extensions": [
+		"ms-python.python",
+		"magicstack.magicpython"
 	]
-
 	// Post-create command to initialize the workspace.  For example, for a node.js add-on you may want:
 	// "postCreateCommand": "cd /workspaces/test_hassio/addons/local/myaddon && npm install",
 	// "extensions": [

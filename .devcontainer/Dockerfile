@@ -38,6 +38,8 @@ COPY .devcontainer/start_ha.sh /usr/local/bin/start_ha.sh
 # Install dependencies for the add-on development below.  For example, if you're running Node.js,
 # you may want something like the following...
 # RUN apt-get install -y --no-install-recommends nodejs npm
+RUN apt-get install -y --no-install-recommends python3-dev python3-pip gcc && \
+    pip3 install opsdroid opsdroid-homeassistant
 
 # Generate a machine-id for this container
 RUN rm /etc/machine-id && dbus-uuidgen --ensure=/etc/machine-id

@@ -1,12 +1,25 @@
 {
-  "name": "Demo Addon",
-  "version": "0.1",
-  "slug": "myaddon",
-  "description": "Add-on that prints 'Hello, world' to the log and exits",
-  "url": "https://github.com/issacg/hassio-addon-devcontainer",
-  "startup": "once",
-  "boot": "manual",
+  "name": "opsdroid",
+  "version": "0.19.0-0.1.7-0",
+  "slug": "opsdroid",
+  "description": "Python chat-ops bot",
+  "url": "https://github.com/ndarilek/hassio-addon-opsdroid",
+  "startup": "application",
+  "boot": "auto",
+  "homeassistant_api": true,
   "options": {},
-  "schema": {}, 
-  "arch": ["amd64", "armv7", "armhf", "i386" , "aarch64"]
+  "schema": {},
+  "map": [
+    "config"
+  ],
+  "ports": {
+    "8080/tcp": 8080
+  },
+  "arch": [
+    "amd64",
+    "armv7",
+    "armhf",
+    "i386",
+    "aarch64"
+  ]
 }
